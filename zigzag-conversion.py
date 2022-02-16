@@ -31,17 +31,7 @@ class Solution1:
 
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        if numRows < 2: return s
-        res = ["" for _ in range(numRows)]
-        i, flag = 0, -1
-        for c in s:
-            res[i] += c
-            if i == 0 or i == numRows - 1: flag = -flag
-            print(i,flag)
-            i += flag
-        return "".join(res)
-
-    def convert1(self, s: str, numRows: int) -> str:
+        if numRows < 2: return s # 特殊情况，只有1行的时候转化的结果和原字符串一样
         array = ['']*numRows
         column,flag = 0,-1 #设置flag默认值-1，是为了后面if逻辑简单一点
         for c in s:
@@ -51,8 +41,6 @@ class Solution:
             column += flag
         return ''.join(array)
         
-
-
 # rs=Solution().convert("PAYPALISHIRING",3)
 rs=Solution().convert("AB",1)
 print(rs)

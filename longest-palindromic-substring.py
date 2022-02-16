@@ -4,6 +4,7 @@ class Solution:
         if len(s) < 2:
             return s
         # 初始化dp数组
+        # !!!! python二维数组正确初始化方法
         dp = [[False]*len(s) for _ in range(len(s))]
         # 递推公式：dp[i][j] = d[i+1][j-1] and (s[i] == s[j])
         # 初始：单个字母或一对字母作为开始
